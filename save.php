@@ -22,6 +22,7 @@ $status = $_POST['status'];
 
 
 //print_r($_POST); exit;
+//print_r($_POST); exit;
 
 $qry="INSERT INTO `feedback_details`(`id`, `name`, `email`, `adderss`, `phone_no`, `performance`, `status) 
 VALUES ('$name','$email','$address','$phone_no','$performance','$status')";
