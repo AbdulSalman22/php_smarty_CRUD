@@ -29,7 +29,7 @@ VALUES ('$name','$email','$address','$phone_no','$performance','$status')";
 
 $row = mysqli_query($con, $qry);
 
-if($row ==1){
+if($row == 1){
     header('Location: index.php?formstatus=saved');
 
 } else{
