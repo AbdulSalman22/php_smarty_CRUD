@@ -24,7 +24,7 @@ $qry="UPDATE `feedback_details`
 
 $row = mysqli_query($con, $qry);
 
-if($row ==1){
+if($row == 1){
     header('Location: index.php?formstatus=updated');
 
 } else{
