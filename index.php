@@ -2,7 +2,7 @@
 require_once('smarty_settings.php');
 require_once('config/connect.php');
 
-$qry ="SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status` FROM `feedback_details`";
+$qry ="SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`, `created_at`, `updated_at` FROM `feedback_details`";
     $exec = mysqli_query($con, $qry);
 
     while($row = mysqli_fetch_object($exec)) {
