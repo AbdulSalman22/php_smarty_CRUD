@@ -22,4 +22,3 @@ if($row == 1){
     echo "Error please try again";
 }
 
-?>

@@ -9,15 +9,16 @@
     </div>
     <div class="row">
         <div class="col-12 mt-2">
+        
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>name</th>
                         <th>email</th>
                         <th>address</th>
                         <th>phone_no</th>
-                        <th>Performance</th>
-                        <th>Status</th>
+                        <th>performance</th>
+                        <th>status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
