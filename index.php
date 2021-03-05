@@ -15,9 +15,37 @@ $qry ="SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `stat
             'performance' => $row->performance,
             'status' => $row->status
         ];
+
     }
-//echo $_GET['formstatus']; exit;
+  //  print_r($res);
+// echo $_GET['formstatus']; exit;
+
+
 $smarty->assign('title', 'Smarty');
 $smarty->assign('listdata', $res);
 $smarty->assign('formstatus', isset($_GET['formstatus']) ? $_GET['formstatus'] : null);
 $smarty->display('index.tpl');
+
+
+
+// $obj=new stdClass();
+// $obj->name="Ravi";
+// $obj->fname="Chinn";
+// $obj->place="Coiimbatgore";
+
+// echo "<pre>";
+// print_r($obj);
+// echo "<br>";
+// $arr=[
+//     'name'=>'Ravi',
+//     'fname'=>'Chinn',
+//     'place'=>'Coimbatore',
+//  ];
+
+//  print_r($arr);
+
+//  echo $obj->name;
+//  echo "<br>";
+//  echo $arr['name'];
+
+

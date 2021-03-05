@@ -10,12 +10,12 @@ $status = $_POST['status'];
 
 //print_r($_POST); exit;
 
-$qry="INSERT INTO `feedback_details`(`id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`)
+$qry="INSERT INTO `feedback_details`(`name`, `email`, `address`, `phone_no`, `performance`, `status`)
 VALUES ('$name','$email','$address','$phone_no','$performance','$status')";
 
 $row = mysqli_query($con, $qry);
 
-if($row == 1){
+if($row ==1){
     header('Location: index.php?formstatus=saved');
 
 } else{

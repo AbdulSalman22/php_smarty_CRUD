@@ -8,8 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 mt-2">
-        
+        <div class="col-12 mt-2">       
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -32,8 +31,8 @@
                             <td>{$item['performance']}</td>
                             <td>{$item['status']}</td>
                             <td>
-                                <a href="edit_feedback.php?edit_id={$item->id}" class="btn btn-info btn-sm">Edit</a>
-                                <a href="delete.php?delete_id={$item->id}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="edit.php?edit_id={$item['id']}" class="btn btn-info btn-sm">Edit</a>
+                                <a href="delete.php?delete_id={$item['id']}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                     {/foreach}
