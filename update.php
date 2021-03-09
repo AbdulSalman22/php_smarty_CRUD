@@ -1,5 +1,7 @@
 <?php
-       require_once('config/connect.php');
+       require_once('class/feedback.php');
+
+       $feedback = new feedback();
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -12,17 +14,8 @@ $edit_id = $_GET['edit_id'];
 
 //print_r($_POST); exit;
 
-$qry="UPDATE `feedback_details`
- SET `id`='$id',
- `name`='$name',
- `email`='$email',
- `address`='$address',
- `phone_no`='$phone_no',
- `performance`='$performance',
- `status`='$status',
-  WHERE id= '$edit_id'";
 
-$row = mysqli_query($con, $qry);
+$row = $feedback->Update($name,$email,$address,$phone_no,$performance,$status);;
 
 if($row == 1){
     header('Location: index.php?formstatus=updated');

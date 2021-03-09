@@ -1,5 +1,7 @@
 <?php
-       require_once('config/connect.php');
+       require_once('class/feedback.php');
+
+        $feedback = new feedback();
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -10,10 +12,7 @@ $status = $_POST['status'];
 
 //print_r($_POST); exit;
 
-$qry="INSERT INTO `feedback_details`(`name`, `email`, `address`, `phone_no`, `performance`, `status`)
-VALUES ('$name','$email','$address','$phone_no','$performance','$status')";
-
-$row = mysqli_query($con, $qry);
+$row = $feedback->Insert($name, $email, $address, $phone_no, $performance, $status);
 
 if($row ==1){
     header('Location: index.php?formstatus=saved');

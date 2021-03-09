@@ -1,11 +1,10 @@
 <?php
-       require_once('config/connect.php');
+       require_once('class/feedback.php');
 
 $delete_id = $_GET['delete_id'];
 
-$qry = "DELETE FROM `feedback_details` WHERE ='$delete_id'";
 
-$row = mysqli_query($con, $qry);
+$row = $feedback->Delete($id,$name,$email,$address,$phone_no,$performance,$status);
 
 if($row == 1){
     header('Location: index.php?formstatus=deleted');

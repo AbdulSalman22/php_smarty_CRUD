@@ -1,11 +1,17 @@
 <?php
-    require_once('config/connect.php');
+    require_once('class/feedback.php');
+
+    // $feedback = new feedback();
+
+    // $row = $feedback->Insert($name, $email, $address, $phone_no, $performance, $status);
+
+    
     
     $edit_id = $_GET['edit_id'];
 
-    $qry = "SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`, `created_at`, `updated_at` FROM `feedback_details` WHERE '$edit_id'";
+    $qry = "SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`, `created_at`, `updated_at` FROM `feedback_details` WHERE id = '$edit_id'";
 
-    $exec = mysqli_query($con, $qry);
+    $exec = mysqli_query($con,$qry);
 
     $res = mysqli_fetch_object($exec);
 
@@ -26,7 +32,7 @@
     <div class="container">
         <div class="row">
         <div class="col-md-4 col-md-offset-4" style="margin-top: 10px;">
-            <form id="feedbackform" method="post" action="update.php?edit_id=<?php echo  $edit_id; ?>">
+            <form id="feedback" method="post" action="update.php?edit_id=<?php echo  $edit_id; ?>">
                 <h1>Feedback update</h1>
                 <div class="form-group">
                     <label>name</label>
@@ -78,7 +84,7 @@
     <script src="asset/vendors/js/jquery.validationEngine.js"></script>
     <script>
         $(function() {
-            $("#bankform").validationEngine();
+            $("#feedback").validationEngine();
             $('#status').val("<?php echo $res->status; ?>");
             $('#branch').val("<?php echo $res->performance; ?>");
         })
