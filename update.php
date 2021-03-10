@@ -2,7 +2,8 @@
        require_once('class/feedback.php');
 
        $feedback = new feedback();
-
+       
+// $id = $_POST['id'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $address = $_POST['address'];
@@ -15,7 +16,7 @@ $edit_id = $_GET['edit_id'];
 //print_r($_POST); exit;
 
 
-$row = $feedback->Update($name,$email,$address,$phone_no,$performance,$status);;
+$row = $feedback->Update($id,$name,$email,$address,$phone_no,$performance,$status);         
 
 if($row == 1){
     header('Location: index.php?formstatus=updated');

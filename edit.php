@@ -1,7 +1,7 @@
 <?php
     require_once('class/feedback.php');
 
-    // $feedback = new feedback();
+     $feedback = new feedback();
 
     // $row = $feedback->Insert($name, $email, $address, $phone_no, $performance, $status);
 
@@ -9,11 +9,13 @@
     
     $edit_id = $_GET['edit_id'];
 
+    //  $row = $feedback->Edit($id,$name, $email, $address, $phone_no, $performance, $status);
+
     $qry = "SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`, `created_at`, `updated_at` FROM `feedback_details` WHERE id = '$edit_id'";
 
-    $exec = mysqli_query($con,$qry);
+    // $exec = mysqli_query($con,$qry);
 
-    $res = mysqli_fetch_object($exec);
+    // $res = mysqli_fetch_object($exec);
 
 ?>
 
@@ -36,19 +38,19 @@
                 <h1>Feedback update</h1>
                 <div class="form-group">
                     <label>name</label>
-                    <input type="text" id="name" name="name" value="<?php echo $res->name; ?>" class="form-control validate[required]">
+                    <input type="text" id="name" name="name"  class="form-control validate[required]">
                 </div>
                 <div class="form-group">
                 <label>email</label>
-                    <input type="email" id="email" name="email" value="<?php echo $res->email; ?>" class="form-control validate[required,minSize[10],ajax[ajaxaccountcheck]]">
+                    <input type="email" id="email" name="email" class="form-control validate[required,minSize[10],ajax[ajaxaccountcheck]]">
                 </div>
                 <div class="form-group">
                     <label>address</label> 
-                    <input type="text" id="address" name="address" value="<?php echo $res->address; ?>" class="form-control validate[required]">
+                    <input type="text" id="address" name="address" class="form-control validate[required]">
                 </div>
                 <div class="form-group">
                     <label>phone no</label>
-                    <input type="text" id="phone no" name="phone no" value="<?php echo $res->phone_no; ?>" class="form-control validate[required,Sizemin[10]">
+                    <input type="text" id="phone no" name="phone no" class="form-control validate[required,Sizemin[10]">
                 </div>
                 <div class="form-group">
                     <label>performance</label>
@@ -85,8 +87,8 @@
     <script>
         $(function() {
             $("#feedback").validationEngine();
-            $('#status').val("<?php echo $res->status; ?>");
-            $('#branch').val("<?php echo $res->performance; ?>");
+            // $('#status').val("<?php echo $res->status; ?>");
+            // $('#branch').val("<?php echo $res->performance; ?>");
         })
         </script>
 </body>

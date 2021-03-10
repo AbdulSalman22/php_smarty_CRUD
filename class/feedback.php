@@ -46,38 +46,51 @@ class feedback {
             return $row;
     }
 
-    public function Insert($name, $email, $address, $phone_no, $performance, $status)
-    {
-
-        $qry="INSERT INTO `feedback_details`(`name`, `email`, `address`, `phone_no`, `performance`, `status`)
-        VALUES ( '$name' , '$email', '$address', '$phone_no', '$performance', '$status')";
-
-        $exec = $this->db->Query($qry);
-
-        return $exec;
-    }
-
-    public function Update($name, $email, $address, $phone_no, $performance, $status)
+    public function Insert($id,$name, $email, $address, $phone_no, $performance, $status)
     {
 
         $qry=" INSERT INTO `feedback_details`(`id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`)      
-         VALUES ( '$name' , '$email', '$address', '$phone_no', $performance, '$status')";
+        VALUES ('$id', '$name' , '$email', '$address', '$phone_no', '$performance', '$status')";
 
         $exec = $this->db->Query($qry);
 
         return $exec;
     }
-    public function Edit($name, $email, $address, $phone_no, $performance, $status)
+
+    public function Update($id,$name, $email, $address, $phone_no, $performance, $status)
     {
 
-        $qry=" SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status` FROM `feedback_details` ";
+        $edit_id = $_GET['edit_id'];
+
+        $qry=" UPDATE `feedback_details`
+         SET `id`='$id',
+         `name`='$name',
+         `email`='$email',
+         `address`='$address',
+         `phone_no`='$phone_no',
+         `performance`='$performance',
+         `status`='$status'
+
+          WHERE id = '$edit_id'";
+        //   print_r($qry);
+          
+        $exec = $this->db->Query($qry);
+
+        return $exec;
+    }
+    public function Edit($id,$name, $email, $address, $phone_no, $performance, $status)
+    {
+        $edit_id = $_GET['edit_id'];
+
+        $qry=" SELECT `id`, `name`, `email`, `address`, `phone_no`, `performance`, `status` FROM `feedback_details` WHERE id = '$edit_id'";
 
         $exec = $this->db->Query($qry);
 
         return $exec;
     }
-    public function Delete($name, $email, $address, $phone_no, $performance, $status)
+    public function Delete($id,$name, $email, $address, $phone_no, $performance, $status)
     {
+        $delete_id = $_GET['delete_id'];
 
         $qry=" DELETE FROM `feedback_details` WHERE id = '$delete_id'";
 
@@ -87,9 +100,9 @@ class feedback {
     }
     public function Save($name, $email, $address, $phone_no, $performance, $status)
     {
-
-        $qry=" INSERT INTO `feedback_details`(`id`, `name`, `email`, `address`, `phone_no`, `performance`, `status`)      
-        VALUES ( '$name' , '$email', '$address', '$phone_no', $performance, '$status')";
+        
+        $qry=" INSERT INTO `feedback_details`( `name`, `email`, `address`, `phone_no`, `performance`, `status`)      
+        VALUES ('$name' , '$email', '$address', '$phone_no', '$performance', '$status')";
 
         $exec = $this->db->Query($qry);
 

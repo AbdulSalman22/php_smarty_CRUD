@@ -12,7 +12,7 @@ $status = $_POST['status'];
 
 //print_r($_POST); exit;
 
-$row = $feedback->Insert($name, $email, $address, $phone_no, $performance, $status);
+$row = $feedback->Save($id,$name, $email, $address, $phone_no, $performance, $status);
 
 if($row ==1){
     header('Location: index.php?formstatus=saved');
