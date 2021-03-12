@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-12 mt-2">       
-            <table class="table table-bordered">
+            <table id="feedback" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>name</th>
@@ -41,4 +41,20 @@
         </div>
     </div>
 </div>
+{/block}
+
+{block name=custom_style}
+    <script src="asset/js/jquery3.5.1.js"></script>
+    <script src="asset/vendors/datatable/js/jquery.dataTables.min.js"></script>
+   
+    
+{/block}
+
+{block name=custom_script}
+    <script>
+            $(function(){
+
+                $('#feedback').DataTable();
+            })
+        </script>
 {/block}

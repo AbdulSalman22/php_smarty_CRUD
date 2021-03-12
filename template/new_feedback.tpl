@@ -68,6 +68,7 @@
        
         <script src="asset/vendors/js/languages/jquery.validationEngine-en.js"></script>
         <script src="asset/vendors/js/jquery.validationEngine.js"></script>
+        <script src="asset/vendors/datatable/js/jquery.dataTable.min.js"></script>
         <script>
             $(function(){
                 $("#feedback").validationEngine();
